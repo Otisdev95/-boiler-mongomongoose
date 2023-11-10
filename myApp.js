@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+console.log("Hello World");
 
 let Person;
 
