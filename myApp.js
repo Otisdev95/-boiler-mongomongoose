@@ -11,16 +11,9 @@ useNewUrlParser: true, useUnifiedTopology: true });
 console.log("Hello World");
 
 const personSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: true
-  },
-  age: {
-    type: Number
-  },
-  favoriteFoods: {
-    type: Number
-  }
+  name: { type: String, require: true },
+  age: { type: Number },
+  favoriteFoods: { type: [String] }
 });
 
 let Person;
