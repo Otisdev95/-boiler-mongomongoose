@@ -33,19 +33,20 @@ const createAndSavePerson = (done) => {
    });
 };
 
-const createManyPeople = (arrayOfPeople, done) => {
-  arrayOfPeople = Model.create([
-    {name: "John Doe"},
-    { name: "Jane Doe" },
-    { name: "Janet Doe" }
-  ]);
-
-  arrayOfPeople.save((err, data) => {
+var createManyPeople = (arrayOfPeople, done) => {
+  arrayOfPeople = [
+    {name: "John Doe", age: 20, favoriteFoods: "rice"},
+    { name: "Jane Doe", age: 21, favoriteFoods: "beans"},
+    { name: "Janet Doe", age: 22, favoriteFoods: "salad"}
+  ];
+  
+  Person.create(arrayOfPeople((err, data) => {
     if (err) return console.error(err);
     done(null, data);
-  });
+  }));
 };
 
+ 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
 };
