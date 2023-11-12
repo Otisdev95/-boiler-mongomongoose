@@ -39,9 +39,9 @@ var createManyPeople = (done) => {
     { name: "Jane Doe", age: 21, favoriteFoods: ["beans"] },
     { name: "Janet Doe", age: 22, favoriteFoods: ["salad"] }
   ];
-  Person.create(arrayOfPeople, (err, data) => {
+  Person.create(arrayOfPeople, (err, people) => {
     if (err) return console.error(err);
-    done(null, data);
+    done(null, people);
   });
 };
 
