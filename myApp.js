@@ -11,7 +11,7 @@ useNewUrlParser: true, useUnifiedTopology: true });
 console.log("Hello World");
 
 const personSchema = new mongoose.Schema({
-  name: { type: String, require: true },
+  name: { type: String, required: true },
   age: { type: Number },
   favoriteFoods: { type: [String] }
 });
@@ -33,17 +33,16 @@ const createAndSavePerson = (done) => {
    });
 };
 
-var arrayOfPeople = [
-  { name: "John Doe", age: 20, favoriteFoods: "rice" },
-  { name: "Jane Doe", age: 21, favoriteFoods: "beans" },
-  { name: "Janet Doe", age: 22, favoriteFoods: "salad" }
-];
-
 var createManyPeople = (done) => {
-  Person.create(arrayOfPeople((err, data) => {
+  var arrayOfPeople = [
+    { name: "John Doe", age: 20, favoriteFoods: ["rice"] },
+    { name: "Jane Doe", age: 21, favoriteFoods: ["beans"] },
+    { name: "Janet Doe", age: 22, favoriteFoods: ["salad"] }
+  ];
+  Person.create(arrayOfPeople, (err, data) => {
     if (err) return console.error(err);
     done(null, data);
-  }));
+  });
 };
 
  
