@@ -33,7 +33,7 @@ const createAndSavePerson = (done) => {
    });
 };
 
-var createManyPeople = (done) => {
+var createManyPeople = (arrayOfPeople, done) => {
   var arrayOfPeople = [
     { name: "John Doe", age: 20, favoriteFoods: ["rice"] },
     { name: "Jane Doe", age: 21, favoriteFoods: ["beans"] },
