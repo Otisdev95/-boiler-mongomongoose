@@ -10,7 +10,22 @@ useNewUrlParser: true, useUnifiedTopology: true });
 
 console.log("Hello World");
 
+const personSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    require: true
+  },
+  age: {
+    type: Number
+  },
+  favoriteFoods: {
+    type: Number
+  }
+});
+
 let Person;
+
+Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
